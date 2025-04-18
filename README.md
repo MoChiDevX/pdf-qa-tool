@@ -1,7 +1,7 @@
 # 🌟 AI智能PDF问答助手/pdf-qa-tool
-Upload a PDF and ask questions with GPT-3.5, supporting multi-turn dialogue.
+Upload a PDF and ask questions with GPT-4, supporting multi-turn dialogue.
 
-上传 PDF，使用 GPT-3.5 进行智能问答，支持多轮对话。  
+上传 PDF，使用 GPT-4 进行智能问答，支持多轮对话。  
 
 ## 🚀 快速开始 / Quick Start
 
