@@ -7,7 +7,6 @@ st.title('🌟AI智能PDF解析助手')
 with st.sidebar:
     openai_api_key = st.text_input('请输入OpenAI API密钥：', type = 'password')
     st.markdown = ('[获取OpenAI API key](https://platform.openai.com/api-keys)')
-    base_url = st.text_input('请输入镜像网站地址(如有)：')
 
 if 'memory' not in st.session_state:
     st.session_state['memory'] = ConversationBufferMemory(
@@ -26,12 +25,9 @@ if uploaded_file and question and submit and not openai_api_key:
 
 if uploaded_file and question and submit and openai_api_key:
     try:
-        if base_url:
-            with st.spinner('AI正在思考…'):
-                response = qa_agent(openai_api_key, st.session_state['memory'], uploaded_file, question, base_url)
-        if not base_url:
-            with st.spinner('AI正在思考…'):
-                response = qa_agent(openai_api_key, st.session_state['memory'], uploaded_file, question)
+        with st.spinner('AI正在思考…'):
+            response = qa_agent(openai_api_key, st.session_state['memory'], uploaded_file, question)
+       
     except Exception as e:
         st.error(f"🚨 出现错误：{str(e)}")
         
