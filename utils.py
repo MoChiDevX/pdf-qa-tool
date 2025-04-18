@@ -21,7 +21,7 @@ def qa_agent(openai_api_key, memory, uploaded_file, question):
         separators=['\n\n','\n','！','!','?','？','.','。','，','、','']
     )
     texts = text_splitter.split_documents(docs)
-    embeddings_model = OpenAIEmbeddings(openai_api_key = openai_api_key, base_url = base_url)
+    embeddings_model = OpenAIEmbeddings(openai_api_key = openai_api_key)
     db = FAISS.from_documents(texts, embeddings_model)
     retriever = db.as_retriever()
 
